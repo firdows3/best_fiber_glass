@@ -1,0 +1,90 @@
+.contact-container {
+  background-color: #fff;
+}
+.contact-banner {
+  background-color: #14056e;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 300px;
+}
+.contact-banner-title {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  /* margin-bottom: 20px; */
+  margin-top: 80px;
+  color: #fff;
+}
+.contact-banner-subtext {
+  font-size: 18px;
+  text-align: center;
+  color: #c5c3c3; /* slightly darker than white */
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+  width: 400px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px 0px;
+}
+
+/* EACH CONTACT BOX */
+.each-contact {
+  width: 220px;
+  padding: 25px 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ICON STYLING */
+.each-contact svg {
+  font-size: 35px;
+  background: #14056e;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  /* width: 60px;
+  height: 60px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TITLE (MIDDLE DIV) */
+.each-contact div:nth-child(2) {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* DESCRIPTION (LAST DIV) */
+.each-contact div:nth-child(3) {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 450px) {
+  .contact-banner-subtext {
+    width: 250px;
+    font-size: 15px;
+  }
+  .contact-banner-title {
+    font-size: 38px;
+  }
+}

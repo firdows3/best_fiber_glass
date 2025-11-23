@@ -1,0 +1,698 @@
+.home-container {
+  width: 100%;
+  background-color: #fff;
+  /* height: 100vh; */
+  /* overflow-y: auto; */
+  /* scrollbar-width: none; Firefox */
+  /* -ms-overflow-style: none; IE 10+ */
+}
+
+/* .home-container::-webkit-scrollbar {
+  display: none; Chrome, Safari, Edge
+} */
+
+.home-banner {
+  position: relative;
+  width: 100%;
+  color: white;
+}
+
+.banner-img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  filter: brightness(35%);
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  width: 80%;
+  max-width: 900px;
+}
+
+.banner-title {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  margin-top: 80px;
+}
+
+.banner-subtext {
+  font-size: 18px;
+  text-align: center;
+  color: #e3e3e3; /* slightly darker than white */
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+.order-btn {
+  background-color: #14056e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.works-link {
+  color: white;
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* rotating images container */
+.home-images {
+  width: 90%;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  margin: 10px auto;
+  /* margin-top: 80vh; */
+}
+
+/* The track that moves */
+.image-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollImages 25s linear infinite;
+}
+
+/* Image styling */
+.image-track img {
+  width: 150px;
+  height: 150px;
+  /* object-fit: cover; */
+  border-radius: 12px;
+  filter: brightness(45%);
+}
+
+/* Animation: moves left continuously */
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Home Expertise Section ===== */
+.home-expertise {
+  width: 90%;
+  margin: 0px auto;
+  padding: 80px 0px;
+}
+
+/* --- Expertise Top --- */
+.home-expertise-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 40px;
+}
+
+.home-expertise-top > div:first-child {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+}
+
+.home-expertise-top > div:last-child {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  max-width: 500px;
+}
+
+/* --- Expertise Body --- */
+.home-expertise-body {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-expertise-body > div {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  width: 350px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.home-expertise-body img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(40%);
+}
+
+/* Text overlay */
+.home-expertise-body div > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #14056e;
+  padding: 12px 16px;
+  border-top-right-radius: 12px;
+  color: white;
+  width: 280px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Only show title initially */
+.home-expertise-body div > div > div:first-child {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.home-expertise-body div > div > div:last-child {
+  opacity: 0;
+  max-height: 0;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Hover effect */
+.home-expertise-body div:hover > div > div:last-child {
+  opacity: 1;
+  max-height: 200px;
+  transition: all 0.5s ease;
+}
+
+/* -------- HOME ABOUT SECTION -------- */
+
+.home-about {
+  display: flex;
+  gap: 40px;
+  padding: 80px 0 40px;
+  align-items: stretch;
+}
+
+/*** LEFT SIDE ***/
+.home-about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.home-about-left > div:first-child {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+}
+
+.home-about-left > div:nth-child(2) {
+  color: #555;
+  font-size: 18px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.home-about-left > div:nth-child(3) div {
+  position: relative;
+  padding-left: 25px;
+}
+
+.home-about-left > div:nth-child(3) div::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1a7fe0;
+  font-size: 18px;
+}
+.home-about-btn {
+  background-color: #14056e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 130px;
+  text-align: center;
+}
+/*** RIGHT SIDE ***/
+.home-about-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch; /* equal height */
+}
+
+/* left column (two stacked images) */
+.home-about-right > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-about-right > div img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: brightness(45%);
+}
+
+/* tall image on the right */
+.home-about-right > img:last-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-row: span 2;
+  height: 510px;
+  border-radius: 15px;
+  filter: brightness(45%);
+}
+
+/* ========== TEAM SECTION ========== */
+
+.home-team {
+  padding: 60px 0;
+  text-align: center;
+  color: #000;
+}
+
+/* 1. Heading */
+.home-team > div:first-child {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 40px;
+}
+
+/* Team container */
+.home-team-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  /* flex-wrap: wrap; responsive */
+}
+
+/* Each worker card */
+.home-team-each-worker {
+  background-color: rgba(160, 159, 159, 0.1); /* slightly darker than white */
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.home-team-each-worker:hover {
+  transform: translateY(-8px);
+}
+
+/* Worker image */
+.home-team-each-worker img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Name */
+.home-team-each-worker > div:nth-child(2) {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Role */
+.home-team-each-worker > div:nth-child(3) {
+  font-size: 14px;
+  color: #d7d7d7;
+  font-family: "Inter", sans-serif;
+  margin-top: 5px;
+}
+
+/* Last member under container (your structure) */
+.home-team > .home-team-each-worker {
+  margin: 30px auto 0;
+}
+
+/* ========== HOME REVIEWS ========== */
+
+.home-reviews {
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* 1. Title */
+.home-reviews > div:first-child {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 40px;
+}
+
+/* 2. Reviews container (flex layout) */
+.home-review-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* 3. Each review card */
+.home-each-review {
+  background-color: rgba(160, 159, 159, 0.1); /* slightly darker than white */
+  backdrop-filter: blur(5px);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border-radius: 5px;
+  width: 500px;
+  position: relative;
+  padding: 30px;
+}
+
+/* ----- LEFT SIDE: image + stars ----- */
+
+.home-each-review-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* reviewer image */
+.home-each-review-left img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* stars container */
+.home-each-review-left > div:last-child {
+  display: flex;
+  gap: 5px;
+}
+
+/* yellow stars */
+.home-each-review-left > div:last-child::before {
+  content: "★★★★★"; /* 5 stars */
+  font-size: 18px;
+  color: gold;
+  letter-spacing: 2px;
+}
+
+/* ----- RIGHT SIDE TEXT ----- */
+
+.home-each-review-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+/* name */
+.home-each-review-right > div:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* location */
+.home-each-review-right > div:nth-child(2) {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  font-family: "Roboto", sans-serif;
+}
+
+/* description */
+.home-each-review-right > div:nth-child(3) {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #555;
+  margin-top: 7px;
+}
+
+/* ---------------- HOME CONTACT ---------------- */
+
+.home-contact {
+  display: flex;
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+}
+
+/* Left and right equal width */
+.home-contact-left,
+.home-contact-right {
+  width: 50%;
+}
+.home-contact-left {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #14056e;
+}
+
+/* Right image fills entire area */
+.home-contact-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Each section inside left side */
+.home-contact-left > div {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-contact-left > div:last-child {
+  border-bottom: none; /* last one no underline */
+}
+
+/* The headings inside each section */
+.home-contact-left > div > div:first-child {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 8px;
+}
+
+/* Text under headings */
+.home-contact-left > div > div:not(:first-child) {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 3px 0;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+   ========================== */
+
+/* Tablets & Medium Screens */
+@media (max-width: 1050px) {
+  .home-review-container {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 992px) {
+  .banner-title {
+    font-size: 40px;
+  }
+
+  .banner-subtext {
+    font-size: 16px;
+  }
+
+  .banner-content {
+    width: 90%;
+  }
+  .home-about {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .home-about-right {
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-team-container {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Large (max-width: 768px) */
+@media (max-width: 790px) {
+  .home-expertise-top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .home-expertise-body > div {
+    width: 450px;
+  }
+  .home-expertise-body div > div {
+    width: 320px;
+  }
+}
+@media (max-width: 768px) {
+  .banner-img {
+    height: 80vh;
+  }
+
+  .banner-title {
+    font-size: 32px;
+    margin-top: 100px;
+  }
+
+  .banner-subtext {
+    font-size: 15px;
+  }
+
+  .banner-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .order-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .works-link {
+    font-size: 14px;
+  }
+  .image-track img {
+    width: 150px;
+    height: 150px;
+  }
+  .home-about-left > div:first-child {
+    font-size: 26px;
+  }
+
+  .home-about-left > div:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .home-about-right > div img {
+    height: 180px;
+  }
+
+  .home-about-right > img:last-child {
+    height: 370px;
+  }
+  .home-contact {
+    flex-wrap: wrap;
+  }
+  .home-contact-right {
+    width: 100%;
+  }
+  .home-contact-right img {
+    height: 400px;
+  }
+  .home-contact-left {
+    width: 100%;
+  }
+}
+
+/* Mobile Small (max-width: 480px) */
+@media (max-width: 480px) {
+  .banner-content {
+    width: 95%;
+  }
+
+  .banner-title {
+    font-size: 26px;
+  }
+
+  .banner-subtext {
+    font-size: 14px;
+  }
+
+  .order-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .image-track img {
+    width: 120px;
+    height: 120px;
+  }
+  .home-expertise-body > div {
+    width: 380px;
+  }
+  .home-expertise-body div > div {
+    width: 250px;
+  }
+  .home-each-review {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .home-each-review-right {
+    text-align: center;
+  }
+}
+@media (max-width: 350px) {
+  .home-expertise-body > div {
+    width: 350px;
+  }
+  .home-expertise-body div > div {
+    width: 220px;
+  }
+  .home-about {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .home-about-left {
+    /* text-align: center; */
+    gap: 15px;
+  }
+
+  .home-about-right {
+    grid-template-columns: 1fr; /* stack images */
+  }
+
+  .home-about-right > div {
+    flex-direction: column;
+  }
+
+  .home-about-right > div img {
+    height: 240px; /* all equal height on mobile */
+  }
+
+  .home-about-right > img:last-child {
+    grid-row: span 1; /* stop stretching on mobile */
+    height: 400px;
+  }
+}

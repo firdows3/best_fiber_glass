@@ -1,0 +1,137 @@
+/* === HEADER CONTAINER === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 5px auto;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 20;
+}
+
+/* === LOGO === */
+.header-logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* === LINKS MIDDLE === */
+/* .header-middle {
+  display: flex;
+  gap: 50px;
+  font-size: 18px;
+  color: #333;
+} */
+
+/* === RIGHT SECTION (LOGIN) === */
+.header-right {
+  color: #605e5e;
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* === MOBILE MENU ICON === */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* === MOBILE DROPDOWN === */
+/* .visible {
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background-color: #fff;
+  padding: 12px;
+  gap: 15px;
+  width: 160px;
+  text-align: left;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+} */
+.visible-header-right {
+  display: none;
+  color: #605e5e;
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #000;
+}
+
+.header-middle {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  font-size: 18px;
+  color: #333;
+}
+.header-middle a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 4px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header-middle a:hover {
+  color: #605e5e;
+}
+/* === RESPONSIVE === */
+
+@media (max-width: 820px) {
+  .header-middle {
+    display: none;
+  }
+  .visible {
+    display: flex; /* show only when menuOpen is true */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: #fff;
+    padding: 12px;
+    gap: 15px;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  .visible a {
+    text-decoration: none;
+    color: #333;
+  }
+  .header-right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .visible-header-right {
+    display: block;
+  }
+}
+
+@media (max-width: 620px) {
+  .header-middle {
+    gap: 25px;
+    font-size: 16px;
+  }
+}

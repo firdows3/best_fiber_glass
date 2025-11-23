@@ -1,0 +1,19 @@
+* {
+  font-family: "Montserrat", "Roboto", "Inter", sans-serif;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  width: 100% !important;
+}

@@ -1,0 +1,196 @@
+.about-container {
+  background-color: #fff;
+}
+.about-banner {
+  background-color: #14056e;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 300px;
+}
+.about-banner-title {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  /* margin-bottom: 20px; */
+  margin-top: 80px;
+  color: #fff;
+}
+.about-banner-subtext {
+  font-size: 18px;
+  text-align: center;
+  color: #c5c3c3; /* slightly darker than white */
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+  width: 400px;
+}
+
+.about-qualities {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  margin: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.about-each-qualities {
+  flex: 1;
+  background-color: #f8f9fa; /* very light background */
+  padding: 25px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+/* Icon size */
+.about-each-qualities svg {
+  font-size: 60px;
+  color: #14056e; /* optional nice highlight color */
+}
+
+/* Title (2nd div) */
+.about-each-qualities div:nth-child(2) {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Description (last div) */
+.about-each-qualities div:nth-child(3) {
+  font-size: 14px;
+  color: #6c6c6c;
+  line-height: 1.4;
+  width: 250px;
+}
+
+/* Main container */
+.about-experience-team {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px auto;
+  /* flex-wrap: wrap; */
+  width: 85%;
+}
+
+/* Left side image */
+.about-experience-team-left img {
+  width: 100%;
+  /* max-width: 450px; */
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Right side */
+.about-experience-team-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+}
+
+/* Right side Title */
+.about-experience-team-right > div:first-child {
+  font-size: 28px;
+  font-weight: 800;
+  color: #333;
+  width: 500px;
+}
+
+/* Each experience item */
+.about-each-experience-team {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0;
+  width: 500px;
+}
+
+/* Icon size */
+.about-each-experience-team svg {
+  font-size: 30px;
+  color: #14056e; /* Accent color */
+}
+
+/* Text container inside each experience */
+.about-each-experience-team > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Title inside each experience */
+.about-each-experience-team > div > div:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Description text */
+.about-each-experience-team > div > div:last-child {
+  font-size: 14px;
+  color: #6c6c6c;
+  line-height: 1.4;
+}
+
+/* Contact button */
+.contact-btn {
+  background-color: #14056e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 150px;
+  text-align: center;
+}
+
+@media (max-width: 1150px) {
+  .about-experience-team-right > div:first-child,
+  .about-each-experience-team {
+    width: 400px;
+    font-size: 25px;
+  }
+}
+@media (max-width: 1000px) {
+  .about-experience-team {
+    flex-wrap: wrap;
+  }
+  .about-experience-team-right {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 450px) {
+  .about-banner-subtext {
+    width: 250px;
+    font-size: 15px;
+  }
+  .about-banner-title {
+    font-size: 38px;
+  }
+  .about-experience-team-right > div:first-child,
+  .about-each-experience-team {
+    width: 300px;
+  }
+}
+@media (max-width: 320px) {
+  .about-each-qualities div:nth-child(3) {
+    width: 200px;
+  }
+  .about-experience-team-right > div:first-child,
+  .about-each-experience-team {
+    width: 270px;
+  }
+}
