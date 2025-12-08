@@ -1,0 +1,151 @@
+.footer {
+  /* background-color: #f1fcff; */
+  color: #bbbaba;
+  width: 100%;
+  /* position: absolute;
+  bottom: 0; */
+  background-color: #0b033e;
+}
+
+.footer-top {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px auto;
+  padding: 30px;
+  gap: 20px;
+  color: #fff;
+}
+
+.footer-top-title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.footer-top-btn {
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.footer-middle {
+  display: flex;
+  /* width: 100%; */
+  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: #3e3d3d 1px solid;
+  border-top: #949393 1px solid;
+}
+
+.footer-middle-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+}
+
+.footer-middle-left img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.footer-link {
+  font-size: 20px;
+  color: #605e5e;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+.footer-motto {
+  width: 450px;
+  margin: 15px 0px;
+}
+.footer-middle-icons {
+  display: flex;
+  gap: 10px;
+}
+.footer-middle-icons a {
+  font-size: 23px;
+  color: #fff;
+}
+.footer-middle a:hover {
+  color: #2e2d2d;
+}
+
+.footer-middle-right {
+  color: #949393;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 280px;
+}
+.footer-middle-right-icon {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-link {
+  font-size: 15px;
+}
+@media (max-width: 805px) {
+  .footer-top,
+  .footer-middle {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-middle-left {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .footer-middle-right-icon {
+    justify-content: center;
+  }
+}
+@media (max-width: 627px) {
+  .footer-top-desc {
+    width: 75%;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer-bottom {
+    flex-direction: column-reverse;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 580px) {
+  .footer-middle-icons {
+    font-size: 20px;
+  }
+  .footer-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 470px) {
+  .footer-motto {
+    width: 300px;
+  }
+}
+@media (max-width: 320px) {
+  .footer-motto {
+    width: 250px;
+  }
+}
