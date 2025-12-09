@@ -57,7 +57,12 @@ export async function POST(req) {
 
     const order = await prisma.order.create({
       data: {
-        userId: userId,
+        user: {
+          connect: {
+            id: userId, // connect to existing user by userId
+          },
+        },
+        userId,
         productName,
         productPrice,
         customerName,
