@@ -30,7 +30,7 @@ model Order {
 
   productImage String
   productName  String
-  productPrice String
+  productPrice String?
 
   customerName     String
   customerPhone    String
