@@ -121,8 +121,8 @@ export default function Dashboard() {
         showToast("success", "Work added");
       }
 
-      setProductModalOpen(false);
       fetchProducts();
+      setProductModalOpen(false);
     } catch (err) {
       console.error(err);
       showToast("error", "Save failed");
