@@ -420,7 +420,7 @@ export default function Dashboard() {
                   onClick={() => openEditProduct(p)}
                 >
                   <img
-                    src={`https://soothing-alignment-production.up.railway.app/dashboard${p.imageUrl}`}
+                    src={p.imageUrl}
                     alt={p.name}
                     className={styles.productImg}
                   />
