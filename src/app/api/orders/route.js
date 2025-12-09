@@ -62,7 +62,6 @@ export async function POST(req) {
             id: userId, // connect to existing user by userId
           },
         },
-        userId,
         productName,
         productPrice,
         customerName,
