@@ -7,46 +7,38 @@ import path from "path";
 export const runtime = "nodejs";
 const prisma = new PrismaClient();
 
-export async function PATCH(req, context) {
-  const params = await context.params;
-  const id = params?.id;
-  console.log(id);
-
+export async function PATCH(req, { params }) {
   try {
     const data = await req.formData();
+    const id = params.id;
 
     const name = data.get("name");
     const price = data.get("price");
     const description = data.get("description") || "";
-    const existingImageUrl = data.get("imageUrl");
 
-    let image = existingImageUrl || "";
-
-    const file = data.get("image");
+    let imageUrl = data.get("imageUrl"); // old URL
+    const file = data.get("image"); // new uploaded file
 
     if (file && file.size > 0) {
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const arrayBuffer = await file.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
 
-      const uploadDir = path.join(process.cwd(), "public/uploads");
-      if (!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir, { recursive: true });
-      }
+      const uploadRes = await cloudinary.uploader.upload(
+        `data:image/jpg;base64,${buffer.toString("base64")}`,
+        { folder: "soothing-products" }
+      );
 
-      const fileName = `product_${Date.now()}.jpg`;
-      const filePath = path.join(uploadDir, fileName);
-
-      fs.writeFileSync(filePath, buffer);
-      image = `/uploads/${fileName}`;
+      imageUrl = uploadRes.secure_url;
     }
 
     const product = await prisma.product.update({
       where: { id },
-      data: { name, price, description, imageUrl: image },
+      data: { name, price, description, imageUrl },
     });
 
     return NextResponse.json({ success: true, product });
   } catch (err) {
-    console.error("Edit product error:", err);
+    console.error("Update product error:", err);
     return NextResponse.json(
       { success: false, message: "Update failed" },
       { status: 500 }

@@ -1,3 +1,4 @@
+import cloudinary from "@/lib/cloudinary";
 // app/api/products/route.js
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
@@ -30,41 +31,31 @@ export async function POST(req) {
     const name = data.get("name");
     const price = data.get("price");
     const description = data.get("description") || "";
-    const existingImageUrl = data.get("imageUrl"); // from edit
+    const file = data.get("image"); // uploaded file
 
-    let image = existingImageUrl || "";
-
-    // Handle uploaded file
-    const file = data.get("image");
-
-    if (file && file.size > 0) {
-      const buffer = Buffer.from(await file.arrayBuffer());
-
-      const uploadDir = path.join(process.cwd(), "public/uploads");
-      if (!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir, { recursive: true });
-      }
-
-      const fileName = `product_${Date.now()}.jpg`;
-      const filePath = path.join(uploadDir, fileName);
-
-      fs.writeFileSync(filePath, buffer);
-      image = `/uploads/${fileName}`;
-    }
-
-    if (!name || !price || !image) {
+    if (!file) {
       return NextResponse.json(
-        { success: false, message: "Missing required fields" },
+        { success: false, message: "Image is required" },
         { status: 400 }
       );
     }
+
+    // Convert file to base64
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    // Upload to Cloudinary
+    const uploadRes = await cloudinary.uploader.upload(
+      `data:image/jpg;base64,${buffer.toString("base64")}`,
+      { folder: "soothing-products" }
+    );
 
     const product = await prisma.product.create({
       data: {
         name,
         price,
         description,
-        imageUrl: image,
+        imageUrl: uploadRes.secure_url, // save cloudinary URL
       },
     });
 
