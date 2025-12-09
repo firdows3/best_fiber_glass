@@ -13,12 +13,12 @@ export default function Order() {
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-
+    const defaultPrice = 10000;
     const formData = new FormData();
     formData.append("productImageFile", file);
     formData.append("userId", userId);
     formData.append("productName", e.target.productName.value);
-    formData.append("productPrice", "default");
+    formData.append("productPrice", defaultPrice);
     formData.append("customerName", e.target.customerName.value);
     formData.append("customerPhone", e.target.customerPhone.value);
     formData.append("customerEmail", e.target.customerEmail.value);
