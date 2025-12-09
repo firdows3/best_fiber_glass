@@ -23,12 +23,14 @@ export default function Order() {
     formData.append("customerLocation", e.target.customerLocation.value);
 
     try {
-      const res = await fetch("/api/orders", {
-        method: "POST",
-        body: formData,
+      // const res = await fetch("/api/orders", {
+      //   method: "POST",
+      //   body: formData,
+      // });
+      const res = await axios.post("/api/orders", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
-
-      const data = await res.json();
+      console.log(res);
 
       if (res.data.success) {
         setLoading(false);
@@ -37,8 +39,6 @@ export default function Order() {
         setTimeout(() => setSuccessPopup(false), 1500);
       }
     } catch (err) {
-      console.log(err);
-
       setLoading(false);
       setErrorPopup(true);
       setTimeout(() => setErrorPopup(false), 1500);
