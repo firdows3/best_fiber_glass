@@ -5,8 +5,9 @@ import cloudinary from "@/lib/cloudinary";
 const prisma = new PrismaClient();
 export const runtime = "nodejs";
 
-export async function PATCH(req, { params }) {
-  const id = params.id;
+export async function PATCH(req, context) {
+  const params = await context.params;
+  const id = params?.id;
 
   try {
     const data = await req.formData();
