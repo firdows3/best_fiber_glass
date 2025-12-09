@@ -37,6 +37,8 @@ export default function Order() {
         setTimeout(() => setSuccessPopup(false), 1500);
       }
     } catch (err) {
+      console.log(err);
+
       setLoading(false);
       setErrorPopup(true);
       setTimeout(() => setErrorPopup(false), 1500);
