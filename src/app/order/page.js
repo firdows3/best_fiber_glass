@@ -18,6 +18,7 @@ export default function Order() {
     formData.append("productImageFile", file);
     formData.append("userId", userId);
     formData.append("productName", e.target.productName.value);
+    formData.append("productPrice", "default");
     formData.append("customerName", e.target.customerName.value);
     formData.append("customerPhone", e.target.customerPhone.value);
     formData.append("customerEmail", e.target.customerEmail.value);
@@ -109,7 +110,6 @@ export default function Order() {
             placeholder="Product Name"
             required
           />
-
           <input
             name="customerName"
             type="text"
