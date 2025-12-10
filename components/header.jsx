@@ -370,11 +370,12 @@ export default function Header() {
                     <div style={{ color: "green" }}>
                       {o.approval === "approved" && "Approved"}{" "}
                     </div>
-                    {o.paymentImage && o.paymentStatus === "submitted" ? (
+                    {o.paymentImage && o.paymentStatus === "submitted" && (
                       <div style={{ color: "red" }}>
                         Waiting for payment Approval
                       </div>
-                    ) : (
+                    )}
+                    {o.paymentStatus === "paid" && (
                       <div style={{ color: "green" }}>Paid</div>
                     )}
                     <div style={{ color: "green" }}>
