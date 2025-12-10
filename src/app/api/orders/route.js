@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import fs from "fs";
 import path from "path";
+import cloudinary from "@/lib/cloudinary";
 
 export const runtime = "nodejs";
 const prisma = new PrismaClient();
