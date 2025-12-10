@@ -370,9 +370,7 @@ export default function Header() {
                     {o.approval === "approved" ? (
                       <div style={{ color: "green" }}>Approved</div>
                     ) : (
-                      <div style={{ color: "yellow" }}>
-                        Waiting for approval
-                      </div>
+                      <div style={{ color: "green" }}>Waiting for approval</div>
                     )}
                     {o.paymentImage && o.paymentStatus === "submitted" && (
                       <div style={{ color: "red" }}>
