@@ -149,7 +149,10 @@ export default function Order() {
       {loading && <div className={styles.popupLoading}>Processing...</div>}
       {/* Success Popup */}
       {successPopup && (
-        <div className={styles.popupSuccess}>Order Placed Successfully!</div>
+        <div className={styles.popupSuccess}>
+          Order Placed Successfully! Check your email for confirmation and next
+          steps
+        </div>
       )}
       {/* Error Popup */}
       {errorPopup && (

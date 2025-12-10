@@ -184,7 +184,10 @@ function Works() {
 
       {loading && <div className={styles.popupLoading}>Processing...</div>}
       {successPopup && (
-        <div className={styles.popupSuccess}>Order Placed Successfully!</div>
+        <div className={styles.popupSuccess}>
+          Order Placed Successfully! Check your email for confirmation and next
+          steps
+        </div>
       )}
       {errorPopup && (
         <div className={styles.popupError}>Failed to place order!</div>
