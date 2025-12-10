@@ -1097,6 +1097,20 @@
     transform: translateY(0);
   }
 }
+.searchContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  width: 60%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+}
 
 .orderContainer {
   width: 80%;

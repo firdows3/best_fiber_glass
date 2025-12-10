@@ -10,6 +10,7 @@ function Works() {
   const [loading, setLoading] = useState(false);
   const [successPopup, setSuccessPopup] = useState(false);
   const [errorPopup, setErrorPopup] = useState(false);
+  const [search, setSearch] = useState("");
 
   const [authenticated, setAuthenticated] = useState(false);
   const [userId, setUserId] = useState("");
@@ -57,29 +58,43 @@ function Works() {
 
       {/* PRODUCT LIST */}
       <div className={styles.worksProduct}>
-        {products.map((item) => (
-          <div className={styles.worksEachProduct} key={item.id}>
-            <img
-              src={item.imageUrl}
-              alt={item.name}
-              className={styles.productImg}
-            />
+        <div className={styles.searchContainer}>
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className={styles.searchInput}
+          />
+        </div>
 
-            <div>
+        {products
+          .filter((item) =>
+            item.name.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((item) => (
+            <div className={styles.worksEachProduct} key={item.id}>
+              <img
+                src={item.imageUrl}
+                alt={item.name}
+                className={styles.productImg}
+              />
+
               <div>
-                <div>{item.name}</div>
-                <div>{Number(item.price).toLocaleString()} ETB</div>
-              </div>
+                <div>
+                  <div>{item.name}</div>
+                  <div>{Number(item.price).toLocaleString()} ETB</div>
+                </div>
 
-              <div
-                className={styles.productsOrderBtn}
-                onClick={() => setSelectedProduct(item)}
-              >
-                ORDER
+                <div
+                  className={styles.productsOrderBtn}
+                  onClick={() => setSelectedProduct(item)}
+                >
+                  ORDER
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
 
       {/* MODAL */}
