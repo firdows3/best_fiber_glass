@@ -1101,7 +1101,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 .searchInput {

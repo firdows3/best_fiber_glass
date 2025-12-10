@@ -57,17 +57,16 @@ function Works() {
       </div>
 
       {/* PRODUCT LIST */}
+      <div className={styles.searchContainer}>
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className={styles.searchInput}
+        />
+      </div>
       <div className={styles.worksProduct}>
-        <div className={styles.searchContainer}>
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className={styles.searchInput}
-          />
-        </div>
-
         {products
           .filter((item) =>
             item.name.toLowerCase().includes(search.toLowerCase())
