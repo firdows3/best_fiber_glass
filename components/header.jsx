@@ -333,7 +333,7 @@ export default function Header() {
                       <div>{o.productName}</div>
                       <div>{o.price && o.price + "ETB"}</div>{" "}
                       {o.approval === "approved" &&
-                        !o.paymentImage &&
+                        o.paymentImage === null &&
                         o.paymentStatus === "pending" && (
                           <button
                             className="pay-btn"
@@ -370,7 +370,7 @@ export default function Header() {
                     <div style={{ color: "green" }}>
                       {o.approval === "approved" && "Approved"}{" "}
                     </div>
-                    {o.paymentImage && o.paymentStatus === "pending" ? (
+                    {o.paymentImage && o.paymentStatus === "submitted" ? (
                       <div style={{ color: "red" }}>
                         Waiting for payment Approval
                       </div>
